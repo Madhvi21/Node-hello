@@ -18,7 +18,9 @@ variables:
   environmentName: 'Txnode-deployin1'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  #vmImageName: 'ubuntu-latest'
+pool:
+ vmImageName: 'windows-latest'
 
 stages:
 - stage: Build
@@ -49,12 +51,12 @@ stages:
         archiveType: zip
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
-   # - task: PublishBuildArtifacts@1
-    #  inputs:
-    #        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    #        ArtifactName: 'testdrive'
-    #        publishLocation: 'FilePath'
-    #        TargetPath: 'https://drive.google.com/drive/u/1/my-drive'
+    - task: PublishBuildArtifacts@1
+      inputs:
+            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+            ArtifactName: 'testdrive'
+            publishLocation: 'FilePath'
+            TargetPath: 'https://drive.google.com/drive/u/1/my-drive'
 
    
 
