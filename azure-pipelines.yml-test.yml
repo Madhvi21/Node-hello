@@ -49,12 +49,12 @@ stages:
         archiveType: zip
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
-    - task: PublishBuildArtifacts@1
-      inputs:
-            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-            ArtifactName: 'testdrive'
-            publishLocation: 'FilePath'
-            TargetPath: 'https://drive.google.com/drive/u/1/my-drive'
+   # - task: PublishBuildArtifacts@1
+    #  inputs:
+    #        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    #        ArtifactName: 'testdrive'
+    #        publishLocation: 'FilePath'
+    #        TargetPath: 'https://drive.google.com/drive/u/1/my-drive'
 
    
 
